@@ -19,7 +19,7 @@ namespace Settings{
 
         const FLOAT max_hp_multiplier = 0.25; // max hp is multiplied by this value
      
-        const FLOAT passive_mp_recovery_multiplier = 0.125;
+        const FLOAT passive_mp_recovery_multiplier = 0.25;
 
         const BOOL enable_mp_recovery_on_hit = TRUE;
 
