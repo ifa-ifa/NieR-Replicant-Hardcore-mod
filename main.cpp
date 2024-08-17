@@ -17,9 +17,9 @@ namespace Settings{
         const FLOAT max_mp_multiplier = 1; // max mp is multiplied by this value. fixed_max_mp must be set to FALSE for this to do anything. Applied before the reduction
         const FLOAT max_mp_reduction = 0;  // max mp is reduced by this value. fixed_max_mp must be set to FALSE for this to do anything. Applied after the multiplier
 
-        const FLOAT max_hp_multiplier = 0.25; // max hp is multiplied by this value
+        const FLOAT max_hp_multiplier = 0.375; // max hp is multiplied by this value
      
-        const FLOAT passive_mp_recovery_multiplier = 0.25;
+        const FLOAT passive_mp_recovery_multiplier = 0.375;
 
         const BOOL enable_mp_recovery_on_hit = TRUE;
 
