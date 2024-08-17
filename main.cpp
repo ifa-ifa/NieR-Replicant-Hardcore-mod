@@ -6,7 +6,7 @@
 #include<fstream>
 
 namespace Settings{
-        const BOOL debug = TRUE;      // opens terminal for debugging
+        const BOOL debug = FALSE;      // opens terminal for debugging
 
         const FLOAT mp_multiple_required_for_item = 0.999; // using item will fail if current mp is below this multiplier (due to implementation of change_current_mp hook, this shouldn't be set to exactly 1, it should be a little less)
         const FLOAT mp_multiplier_on_item_use = 0.0; // on item use, currrent mp is multiplied by this value. applied before reduxtion
@@ -17,9 +17,9 @@ namespace Settings{
         const FLOAT max_mp_multiplier = 1; // max mp is multiplied by this value. fixed_max_mp must be set to FALSE for this to do anything. Applied before the reduction
         const FLOAT max_mp_reduction = 0;  // max mp is reduced by this value. fixed_max_mp must be set to FALSE for this to do anything. Applied after the multiplier
 
-        const FLOAT max_hp_multiplier = 0.375; // max hp is multiplied by this value
+        const FLOAT max_hp_multiplier = 0.4375; // max hp is multiplied by this value
      
-        const FLOAT passive_mp_recovery_multiplier = 0.375;
+        const FLOAT passive_mp_recovery_multiplier = 0.4375;
 
         const BOOL enable_mp_recovery_on_hit = TRUE;
 
