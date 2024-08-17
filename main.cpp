@@ -72,11 +72,11 @@ uint64_t __fastcall use_item_detoured(int64_t param_1, int32_t item_id, int64_t 
     ReadProcessMemory(handle, (PVOID)(processBaseAddress + 0x122D2D8), &max_hp, sizeof(DWORD), NULL);
     ReadProcessMemory(handle, (PVOID)(processBaseAddress + 0x4374A6C), &current_hp, sizeof(DWORD), NULL);
     
-    if (item_id < 3 and current_hp == max_hp) { //if item used is a healing one and the player is full health
+    if (item_id < 3 and current_hp == max_hp) { // if item used is a healing one and the player is full health
         return 162048;
     }
 
-    if (current_mp >= fixed_max_mp*Settings::mp_multiple_required_for_item) {  // checking you have required mp
+    if (current_mp >= fixed_max_mp*Settings::mp_multiple_required_for_item) {  // Checking the player has the required mp
 
         float new_mp = (current_mp * Settings::mp_multiplier_on_item_use) - Settings::mp_reduction_on_item_use;
         WriteProcessMemory(handle, (PVOID)(processBaseAddress + 0x4374A78), &new_mp, sizeof(float), NULL);
@@ -92,7 +92,7 @@ change_max_hp change_max_hp_hooked = change_max_hp(processBaseAddress + 0x4084b0
 change_max_hp change_max_hp_original;
 void __fastcall change_max_hp_detoured(int64_t* param_1, int32_t param_2) {
     // param_1 ???
-    // param_2  base value for calculating HP, goes through some later operations somewhere 
+    // param_2  base value for calculating HP
     std::cout << "change_max_hp" << "\n" << param_1 << "\n" << param_2 << "\n\n";
 
    
@@ -106,14 +106,13 @@ typedef void(__fastcall* change_max_mp)(int64_t*, int32_t, char, char);
 change_max_mp change_max_mp_hooked = change_max_mp(processBaseAddress + 0x407ad0);
 change_max_mp change_max_mp_original;
 void __fastcall change_max_mp_detoured(int64_t* param_1, int32_t param_2, char param_3, char param_4) {
-    //param_1: some address idk
-    //param_2:  base value for calculating MP, undergoes some more operations to get final value
-    //param_3: ???
+    //param_1: ???
+    //param_2:  base value for calculating MP
     //param_4: ???
 
     std::cout << "change_max_mp" << "\n" << *param_1 << "\n" << param_2 << "\n" << (int)param_3 << "\n" << (int)param_4 << "\n\n";
 
-    change_max_mp_original(param_1, param_2, param_3, param_4); // trying to alter these arguments causes the game to hang when loading a save. So i alter the max MP value afterwards
+    change_max_mp_original(param_1, param_2, param_3, param_4); 
 
 
     float new_mp;
