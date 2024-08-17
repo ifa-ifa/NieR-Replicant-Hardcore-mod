@@ -22,7 +22,7 @@ std::string GetLastErrorAsString()
 STARTUPINFO si;
 PROCESS_INFORMATION pi;
 LPCSTR app_path = "NieR Replicant ver.1.22474487139.exe";
-LPCSTR dll_path = "NieR_Replicant_v1_Hardcore.dll";
+LPCSTR dll_path = "NieR_Replicant_Hardcore.dll";
 
 
 
