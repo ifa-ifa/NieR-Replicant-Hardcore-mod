@@ -97,7 +97,7 @@ void __fastcall change_max_hp_detoured(int64_t* param_1, int32_t param_2) {
 
    
    DWORD max_hp = 0;
-   change_max_hp_original(param_1, param_2*Settings::max_hp_multiplier);
+   change_max_hp_original(param_1, (int32_t)((float)param_2*Settings::max_hp_multiplier));
 
 
 }
