@@ -8,7 +8,7 @@
 namespace Settings{
         const BOOL debug = TRUE;      // opens terminal for debugging
 
-        const FLOAT mp_multiple_required_for_item = 1.0; // using item will fail if current mp is below this multiplier
+        const FLOAT mp_multiple_required_for_item = 0.999; // using item will fail if current mp is below this multiplier (due to implementation of change_current_mp hook, this shouldn't be set to exactly 1, it should be a little less)
         const FLOAT mp_multiplier_on_item_use = 0.0; // on item use, currrent mp is multiplied by this value. applied before reduxtion
         const FLOAT mp_reduction_on_item_use = 0;    // use this and set multiplier to 1.0 if you want a fixed reduction on item use. Or use a combination of both. applied after the multiplier
 
