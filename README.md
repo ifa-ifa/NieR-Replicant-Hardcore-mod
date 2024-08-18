@@ -59,4 +59,4 @@ This is a list of ideas. Most of these will never be implemented (or if they wil
 
 ## Compiling from source
 
-This mod uses a library called Minhook, which in this project is installed automatically by vcpkg manifest mode. Alter `CMakeLists.txt` to set the toolchain file to your installation of `vcpkg.cmake`. At the top of `main.cpp` there are many constants to change that can alter the mod (i can't garantuee these will work perfectly - they should, but iv only ever really tested the base configurations that i use). Then just build using CMake.
+Install vcpkg and either set the installation path to `VCPKG_ROOT` as an system-wide enivronment variable, or alter `CMakeLists.txt` to set the toolchain file path to your installation of vcpkg. Then run using CMake. This will install the required library Minhook automatically. If you build in the command line, make sure the terminal was opened as Administrator or if you run cmake through an ide like VS make sure it was opened as administrator
