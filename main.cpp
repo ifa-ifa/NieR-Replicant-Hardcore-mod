@@ -1,5 +1,4 @@
 ﻿#include <Windows.h>
-#include<detours/detours.h>
 #include "MinHook.h"
 #include<string>
 #include<iostream>
@@ -22,7 +21,7 @@ namespace Settings{
         const FLOAT passive_mp_recovery_multiplier = 0.4375;
 
         const BOOL enable_mp_recovery_on_hit = TRUE;
-
+         
         const FLOAT fixed_mp_recovery_on_hit = 0;
         const FLOAT multiplier_mp_recovery_on_hit = 0.0625; // amount added on hit as multiplier of max mp
 };  

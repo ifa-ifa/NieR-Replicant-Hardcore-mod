@@ -1,6 +1,5 @@
 #include<Windows.h>
 #include<tlhelp32.h>
-#include<detours/detours.h>
 #include<string>
 #include<iostream>
 

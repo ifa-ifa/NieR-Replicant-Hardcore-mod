@@ -59,4 +59,4 @@ This is a list of ideas. Most of these will never be implemented (or if they wil
 
 ## Compiling from source
 
-This mod uses a library called Minhook, which in this project is installed using vcpkg. Alter `CMakeLists.txt` to set the toolchain file to your installation of `vcpkg.cmake`. Then using vcpkg, install Minhook using `vcpkg install minhook:x64-windows-static`. At the top of `main.cpp` there are many constants to change that can alter the mod (i can't garantuee these will work perfectly - they should, but iv only ever really tested the base configurations that i use). Then just build using CMake.
+This mod uses a library called Minhook, which in this project is installed automatically by vcpkg manifest mode. Alter `CMakeLists.txt` to set the toolchain file to your installation of `vcpkg.cmake`. At the top of `main.cpp` there are many constants to change that can alter the mod (i can't garantuee these will work perfectly - they should, but iv only ever really tested the base configurations that i use). Then just build using CMake.
