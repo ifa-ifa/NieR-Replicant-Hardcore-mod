@@ -2,7 +2,7 @@
 set(VCPKG_TARGET_TRIPLET "x64-windows-static")
 #set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /MANIFEST:YES")
 
-set(CMAKE_TOOLCHAIN_FILE "C:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "Path to toolchain")
+set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "Path to toolchain")
 
 project ("NieR Replicant Hardcore mod")
 

@@ -16,11 +16,11 @@ Features can be altered and disabled easily, however that currently requires com
 
 1. Back up save files (this mod shoudn't change them at all, but you should always do this for any mod)
 2. Either download the precompiled files or compile yourself
-3. Move `NieR_Replicant_v1_Hardcore.dll` and `NieR_Replicant_v1_Hardcore_launcher.exe` into your game installation folder. On steam, this is found by opening game page, clicking the gear and pressing `Browse Local Files`
-4. Open `NieR_Replicant_v1_Hardcore_launcher.exe` to play the game in hardcore mode. (you might need steam to be already open before this)
+3. Move `NieR_Replicant_Hardcore.dll` and `NieR_Replicant_Hardcore_launcher.exe` into your game installation folder. On steam, this is found by opening game page, clicking the gear and pressing `Browse Local Files`
+4. Open `NieR_Replicant_Hardcore_launcher.exe` to play the game in hardcore mode. (you might need steam to be already open before this)
 5. In game, set difficulty to Hard (You don't have to, if you want to try making it a little easier you could set it lower, but everything was tested with ingame difficulty on Hard)
 
-If you want to stop using the mod for a bit, just load the game up any normal way you would. This mod shouldn't affect save files at all, so you can swap between using this mod or not as much as you like. To uninstall, just delete `NieR_Replicant_v1_Hardcore.dll` and `NieR_Replicant_v1_Hardcore_launcher.exe`
+If you want to stop using the mod for a bit, just load the game up any normal way you would. This mod shouldn't affect save files at all, so you can swap between using this mod or not as much as you like. To uninstall, just delete `NieR_Replicant_Hardcore.dll` and `NieR_Replicant_Hardcore_launcher.exe`
 
 ## Bugs / Issues
 
@@ -34,7 +34,7 @@ If you want to stop using the mod for a bit, just load the game up any normal wa
 
 > Error when launching process. Error message: DLL not found.
 
-These errors imply it was not installed correctly. Make sure `NieR_Replicant_v1_Hardcore.dll` and `NieR_Replicant_v1_Hardcore_launcher.exe` are in the same folder as `NieR Replicant ver.1.22474487139.exe`
+These errors imply it was not installed correctly. Make sure `NieR_Replicant_Hardcore.dll` and `NieR_Replicant_Hardcore_launcher.exe` are in the same folder as `NieR Replicant ver.1.22474487139.exe`
 
 > Error when opening window handle. Error message: Handle is null.
 

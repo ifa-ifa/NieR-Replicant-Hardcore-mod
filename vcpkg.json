@@ -1,5 +1,8 @@
 {
-  "name" : "nier-replicant-hardcore-mod",
-  "version-string" : "1.0.0",
-  "dependencies" : ["minhook"]
+  "name": "nier-replicant-hardcore-mod",
+  "version-string": "1.0.0",
+  "dependencies": [
+    "minhook"
+  ],
+  "builtin-baseline": "49ac2134b31b95b0ddf29d56873dcd24392691df"
 }
