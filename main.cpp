@@ -139,7 +139,7 @@ void __fastcall change_current_mp_detoured(int64_t param_1, uint32_t param_2, fl
 
     float current_mp = 0;
     ReadProcessMemory(handle, (PVOID)(processBaseAddress + 0x4374A78), &current_mp, sizeof(float), NULL);
-    if (param_3 > current_mp) {     //if new mp is greater than current 
+    if ((current_mp + 2 >param_3) and (param_3 > current_mp)) {     //if new mp is greater than current, but not too great otherwise it would be Orb / postbox recovery
         change_current_mp_original(param_1, param_2, (param_3-current_mp)*Settings::passive_mp_recovery_multiplier+current_mp);
     }
     else {
