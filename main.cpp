@@ -4,6 +4,21 @@
 #include<iostream>
 #include<fstream>
 
+void print_hex(const char* string)
+{
+    unsigned char* p = (unsigned char*)string;
+
+    for (int i = 0; i < strlen(string); ++i) {
+        if (!(i % 16) && i)
+            printf("\n");
+
+        printf("0x%02x ", p[i]);
+    }
+    printf("\n\n");
+}
+
+
+
 namespace Settings{
         const BOOL debug = FALSE;      // opens terminal for debugging
 
@@ -75,7 +90,12 @@ uint64_t __fastcall use_item_detoured(int64_t param_1, int32_t item_id, int64_t 
         return 162048;
     }
 
-    if (current_mp >= fixed_max_mp*Settings::mp_multiple_required_for_item) {  // Checking the player has the required mp
+    char current_weapon[50];
+    ReadProcessMemory(handle, (PVOID)(processBaseAddress + 0x27FA39C), &current_weapon, 50, NULL);
+    char cmp_string[50] = {0x4b, 0x61, 0x69, 0x6e, 0xc3, 0xa9, 0x27, 0x73, 0x20, 0x53, 0x77, 0x6f, 0x72, 0x64};
+
+
+    if ((current_mp >= fixed_max_mp*Settings::mp_multiple_required_for_item) or (strcmp(cmp_string, current_weapon) == 0)) {  // Checking the player has the required mp or if in certain parts of playthrough E
 
         float new_mp = (current_mp * Settings::mp_multiplier_on_item_use) - Settings::mp_reduction_on_item_use;
         WriteProcessMemory(handle, (PVOID)(processBaseAddress + 0x4374A78), &new_mp, sizeof(float), NULL);
