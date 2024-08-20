@@ -24,7 +24,7 @@ If you want to stop using the mod for a bit, just load the game up any normal wa
 
 ## Bugs / Issues
 
-- Reduced MP passive recovery has side effect of making MP recovery from postboxes and destroying orbs also reduced.
+
 - There are small portions of the game where MP bar is not displayed. MP is still tracked, however this can make it difficult to see when you are able to use an item. These sections are short and easy so I don't see this as a huge problem.
 
 
