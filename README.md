@@ -7,7 +7,7 @@ This is a mod that makes NieR Replicant ver.1.22474487139 harder in interesting 
 - Using an item requires and consumes a full bar of MP
 - MP is slightly recovered on hitting enemies
 - Passive MP recovery is slowed
-- Health is reduced by 0.25x
+- Plater health is reduced
 - MP is fixed to 100
 
 Features can be altered and disabled easily, however that currently requires compiling from source.
@@ -24,9 +24,7 @@ If you want to stop using the mod for a bit, just load the game up any normal wa
 
 ## Bugs / Issues
 
-
 - There are small portions of the game where MP bar is not displayed. MP is still tracked, however this can make it difficult to see when you are able to use an item. These sections are short and easy so I don't see this as a huge problem.
-
 
 ## Troubleshooting
 
@@ -47,7 +45,7 @@ If you encounter any other issue or these steps don't fix it, then its my fault 
 This is a list of ideas. Most of these will never be implemented (or if they will, they would be accompanied with a buff. The aim is to make the game hard in fun ways, not just make it crushingly tough), it's just a list from me brainstorming, il publish it here so if you have any feedback on them or suggestions id love to know.
 
 - Make settings customisable without recompiling
-- Limit health items to 3 each and make it so you automatically max out all 9 every time you go near a save point. Sort of like Elden Ring
+- Limit health items to 3 each and make it so you automatically max out all 9 every time you go near a save point.
 - Increase protaganists attack power to reduce the annoyance of bullet sponges
 - Further limit MP, but increase magic damage
 - Increase enemy spawn rates (not sure if this is possible for someone of my reverse-engineering skill to implement but it might be worth a try)

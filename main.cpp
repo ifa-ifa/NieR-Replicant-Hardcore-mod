@@ -114,10 +114,8 @@ void __fastcall change_max_hp_detoured(int64_t* param_1, int32_t param_2) {
     // param_2  base value for calculating HP
     std::cout << "change_max_hp" << "\n" << param_1 << "\n" << param_2 << "\n\n";
 
-   
    DWORD max_hp = 0;
    change_max_hp_original(param_1, (int32_t)((float)param_2*Settings::max_hp_multiplier));
-
 
 }
 
@@ -129,10 +127,9 @@ void __fastcall change_max_mp_detoured(int64_t* param_1, int32_t param_2, char p
     //param_2:  base value for calculating MP
     //param_4: ???
 
-    std::cout << "change_max_mp" << "\n" << *param_1 << "\n" << param_2 << "\n" << (int)param_3 << "\n" << (int)param_4 << "\n\n";
+    if (Settings::debug) std::cout << "change_max_mp" << "\n" << *param_1 << "\n" << param_2 << "\n" << (int)param_3 << "\n" << (int)param_4 << "\n\n";
 
     change_max_mp_original(param_1, param_2, param_3, param_4); 
-
 
     float new_mp;
     if (Settings::use_fixed_max_mp==FALSE) {
@@ -292,7 +289,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         std::cout << "enemy_hit hook enabled" << "\n";
     }
 
-    
         
     else if (ul_reason_for_call == DLL_PROCESS_DETACH) {
           

@@ -7,15 +7,9 @@ project ("NieR Replicant Hardcore mod")
 
 find_package(minhook REQUIRED CONFIG)
 
-
-
 add_library(NieR_Replicant_Hardcore SHARED "main.cpp")
 target_link_libraries(NieR_Replicant_Hardcore minhook::minhook )
 add_executable(NieR_Replicant_Hardcore_launcher "launcher.cpp")
 
-
 set_property(TARGET NieR_Replicant_Hardcore PROPERTY CXX_STANDARD 20)
 set_property(TARGET NieR_Replicant_Hardcore_launcher PROPERTY CXX_STANDARD 20)
-
-
-
