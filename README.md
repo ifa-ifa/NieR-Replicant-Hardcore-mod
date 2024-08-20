@@ -1,4 +1,4 @@
-# Nier Replicant v1 Hardcore mode
+# Nier Replicant ver.1.22474487139 Hardcore mode
 
 This is a mod that makes NieR Replicant ver.1.22474487139 harder in interesting and fun ways.
 
@@ -7,10 +7,10 @@ This is a mod that makes NieR Replicant ver.1.22474487139 harder in interesting 
 - Using an item requires and consumes a full bar of MP
 - MP is slightly recovered on hitting enemies
 - Passive MP recovery is slowed
-- Plater health is reduced
+- Player health is reduced
 - MP is fixed to 100
 
-Features can be altered and disabled easily, however that currently requires compiling from source.
+Features can be adjusted and disabled easily, however that currently requires compiling from source.
 
 ## How to use it?
 

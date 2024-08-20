@@ -201,13 +201,13 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         ret = MH_Initialize();
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when initializing minhook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when initializing minhook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "initialized minhook" << "\n";
         if (DisableThreadLibraryCalls(hModule) == FALSE) {
             error = GetLastErrorAsString();
-            MessageBoxW(0, (std::wstring(L"Error when disabling thread library calls. Error message:") + std::wstring(error.begin(), error.end())).c_str(), L"nnr_hardcore.dll Windows Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when disabling thread library calls. Error message:") + std::wstring(error.begin(), error.end())).c_str(), L" Windows Error", 0);
             return FALSE;
         }
         std::cout << "disabled thread library calls" << "\n";
@@ -215,7 +215,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         ret = MH_CreateHookEx(use_item_hooked, &use_item_detoured, &use_item_original);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when creating use_item hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when creating use_item hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "use_item hook created" << "\n";
@@ -223,7 +223,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         ret = MH_EnableHook(use_item_hooked);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when enabling use_item hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when enabling use_item hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "use_item hook enabled" << "\n";
@@ -231,14 +231,14 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         ret = MH_CreateHookEx(change_max_mp_hooked, &change_max_mp_detoured, &change_max_mp_original);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when creating change_max_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when creating change_max_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "change_max_mp hook created" << "\n";
         ret = MH_EnableHook(change_max_mp_hooked);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when enabling change_max_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when enabling change_max_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "change_max_mp hook enabled" << "\n";
@@ -246,14 +246,14 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         ret = MH_CreateHookEx(change_max_hp_hooked, &change_max_hp_detoured, &change_max_hp_original);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when creating change_max_hp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when creating change_max_hp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "change_max_hp hook created" << "\n";
         ret = MH_EnableHook(change_max_hp_hooked);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when enabling change_max_hp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when enabling change_max_hp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "change_max_hp hook enabled" << "\n";
@@ -261,14 +261,14 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         ret = MH_CreateHookEx(change_current_mp_hooked, &change_current_mp_detoured, &change_current_mp_original);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when creating change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when creating change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "change_current_mp hook created" << "\n";
         ret = MH_EnableHook(change_current_mp_hooked);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when enabling change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when enabling change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "change_current_mp hook enabled" << "\n";
@@ -276,14 +276,14 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         ret = MH_CreateHookEx(hit_enemy_hooked, &hit_enemy_detoured, &hit_enemy_original);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when creating enemy_hit_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when creating enemy_hit_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "enemy_hit hook created" << "\n";
         ret = MH_EnableHook(hit_enemy_hooked);
         if (ret != MH_OK)
         {
-            MessageBoxW(0, (std::wstring(L"Error when enabling enemy_hit hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+            MessageBoxW(0, (std::wstring(L"Error when enabling enemy_hit hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
             return FALSE;
         }
         std::cout << "enemy_hit hook enabled" << "\n";
@@ -295,7 +295,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
           ret = MH_DisableHook(use_item_hooked);
           if (ret != MH_OK)
           {
-              MessageBoxW(0, (std::wstring(L"Error when disabling use_item hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+              MessageBoxW(0, (std::wstring(L"Error when disabling use_item hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
               return FALSE;
           }     
 
@@ -303,7 +303,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
           ret = MH_DisableHook(change_max_hp_hooked);
           if (ret != MH_OK)
           {
-              MessageBoxW(0, (std::wstring(L"Error when disabling change_max_hp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);     
+              MessageBoxW(0, (std::wstring(L"Error when disabling change_max_hp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);     
 
               return FALSE;
           }
@@ -312,7 +312,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
           ret = MH_DisableHook(change_max_mp_hooked);
           if (ret != MH_OK)
           {
-              MessageBoxW(0, (std::wstring(L"Error when disabling change_max_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+              MessageBoxW(0, (std::wstring(L"Error when disabling change_max_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
               return FALSE;
           }
           std::cout << "disabled change_max_mp hook" << "\n";
@@ -320,7 +320,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
           ret = MH_DisableHook(change_current_mp_hooked);
           if (ret != MH_OK)
           {
-              MessageBoxW(0, (std::wstring(L"Error when disabling change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+              MessageBoxW(0, (std::wstring(L"Error when disabling change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
               return FALSE;
           }
           std::cout << "disabled change_current_mp hook" << "\n";
@@ -328,7 +328,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
           ret = MH_DisableHook(hit_enemy_hooked);
           if (ret != MH_OK)
           {
-              MessageBoxW(0, (std::wstring(L"Error when disabling change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);
+              MessageBoxW(0, (std::wstring(L"Error when disabling change_current_mp hook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);
               return FALSE;
           }
           std::cout << "disabled enemy_hit hook" << "\n";
@@ -337,7 +337,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
           ret = MH_Uninitialize();
           if (ret != MH_OK)
           {
-              MessageBoxW(0, (std::wstring(L"Error when uninitializing minhook. Error code:") + std::to_wstring(ret)).c_str(), L"nnr_hardcore.dll Minhook Error", 0);       
+              MessageBoxW(0, (std::wstring(L"Error when uninitializing minhook. Error code:") + std::to_wstring(ret)).c_str(), L" Minhook Error", 0);       
               return FALSE;
           }
           std::cout << "uninitialized minhook" << "\n";
