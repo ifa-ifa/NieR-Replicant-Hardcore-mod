@@ -1,0 +1,7 @@
+{
+  "dependencies": [
+    "minhook",
+    "inih"
+  ],
+  "builtin-baseline": "49ac2134b31b95b0ddf29d56873dcd24392691df"
+}
