@@ -1,28 +1,62 @@
 # Nier Replicant ver.1.22474487139 Hardcore mode
 
+Nier replicant has always had crappy difficulty scaling. The hard mode just makes enemies bullet sponges which doesn't actaully make it harder, it just makes it take longer to beat. For me, the big 3 problems are:
+1) You can always just pause and spam heals whenever you are about to die
+2) You can just run away and use long ranged magic
+2) Bullet sponge enemies makes fights take foreveeeerrrrrrrr
+
+These are the issues im attempting to fix with this mod.
+
 ## Mod functions
 
+
 - Using an item requires and consumes a full bar of MP
+- Player damage dealt increased 
+- Player health is reduced
 - MP is slightly recovered on hitting enemies
 - Passive MP recovery is slowed
-- Player health is reduced
+
 - MP is fixed to 100
 
 Features can be adjusted and disabled using configuration file (requires game restart)
 
-## How to use
+## Installation 
 
-1. Back up save files (this mod shoudn't change them at all, but you should always do this for any mod)
-2. Move `NieR_Replicant_Hardcore.dll` and `NieR_Replicant_Hardcore_launcher.exe` into your game installation folder. (TO find this on steam, open game page, click the gear and press `Browse Local Files`)
-3. optionally, add `NieR_Replicant_Hardcore.ini`. (if you don't it should just use default settings)
-4. Open `NieR_Replicant_Hardcore_launcher.exe` to play the game in hardcore mode.
-5. In game, set difficulty to Hard (You don't have to, if you want to try making it a little easier you could set it lower, but everything was tested with ingame difficulty on Hard)
+### Installation With Special K Local (Recommended)
 
-If you want to temporarily stop using the mod, just load the game up any normal way you would. To uninstall, just delete `NieR_Replicant_Hardcore.dll` and `NieR_Replicant_Hardcore_launcher.exe`
+Open the game once to cause the specialK configuration file to appear in the games install directory. (likely either dxgi.ini or d3d11.ini). Go to the end of that file and add this:
+
+```
+[Import.HardcoreMod]
+Architecture=x64
+Role=ThirdParty
+When=PlugIn
+Filename=NieR_Replicant_Hardcore.dll
+```
+
+Add `NieR_Replicant_Hardcore.dll` to the game installation foler.
+
+### Installation With Special K Global
+
+Start the game from the SpecialK launcher once to create the game profile. go to `SpecialKFolder/Profiles/NieR Replicant ver122474487139/`. Open `SpecialK.ini` and append this to the end of that file:
+
+```
+[Import.HardcoreMod]
+Architecture=x64
+Role=ThirdParty
+When=PlugIn
+Filename=NieR_Replicant_Hardcore.dll
+```
+
+Move `NieR_Replicant_Hardcore.dll` to that folder.
+
+### Installation Without Special K
+
+Go to the game installation folder and move `NieR_Replicant_Hardcore.dll` and `NieR_Replicant_Hardcore_launcher.exe` into it. To use the mod, launch from that exe. You can add it to steam by using the `Add a game -> Add a Non Steam Game` feature.
 
 ## Bugs / Issues
 
-- There are small portions of the game where MP bar is not displayed. MP is still tracked, however this can make it difficult to see when you are able to use an item. These sections are short and easy so I don't see this as a huge problem.
+- Before meeting Weiss, the MP bar is not displayed. MP is still tracked, however this can make it difficult to see when you are able to use an item. These sections are short and easy so I don't see this as a huge problem.
 
 ## Troubleshooting
 
@@ -30,14 +64,13 @@ If you want to temporarily stop using the mod, just load the game up any normal 
 
 > Error when launching process. Error message: DLL not found.
 
-Make sure `NieR_Replicant_Hardcore.dll` and `NieR_Replicant_Hardcore_launcher.exe` are in the same folder as `NieR Replicant ver.1.22474487139.exe`
+The mod may have been installed wrong. Try reinstalling the mod.
 
 > Error when opening window handle. Error message: Handle is null.
 
 Try making sure steam is already open before you open the launcher.
 
-If you encounter any other issue then its probably my fault and i wouldd appreciate it if you let me know by commenting on the nexus page.
-
+Any other issues, or these steps don't work, or if the mod just does nothing with no error, let me know on nexus or github
 
 ## Changelog
 
@@ -47,22 +80,25 @@ If you encounter any other issue then its probably my fault and i wouldd appreci
 - Added configuration file, so no recompiling needed to change values. 
 - Fixed bug where sometimes full MP bar was not required to use item.
 - More robust injection
-
-
-
-
-
-
+#### v1.1.0
+- Heavily rebalanced, biggest change being large increase in player damage dealt.
+- Uses better hooks which should make scaling more accurate and customising difficulty easier.
+- Allows altering attack, magic attack, defense, magic defense
+- No longer requires the launcher, instead using SpeicalK which many of you have installed. This will:
+	- Fix steam integration
+	- Require less files to be installed
+	- Make using alongside other mods easier
+	
 
 ## Future additions / ideas
 
-This is a list of ideas. Most of these will never be implemented (or if they will, they would be accompanied with a buff. The aim is to make the game hard in fun ways, not just make it crushingly tough), if you have any feedback on them or suggestions id love to know.
+This is a list of ideas. If you have any feedback on them or suggestions id love to know.
 
-- changing settings does not require restart
+- Hot reloading settings
 - Limit health items to 3 each and make it so you automatically max out all 9 every time you go near a save point.
 - Increase protaganists attack power to reduce the annoyance of bullet sponges
 - Further limit MP, but increase magic damage
-- Increase enemy spawn rates (not sure if this is possible for someone of my reverse-engineering skill to implement but it might be worth a try)
+- Increase enemy spawn rates. I can somewhat do this right now but chose not to implement it yet until i can find a way to make it good for proper gameplay. right now its so limited and buggy its just a funny gimick.
 - Buff the effects of words
 - Attack being blocked stuns the player
 - Make item drops rarer

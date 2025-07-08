@@ -1,26 +1,8 @@
 #include<Windows.h>
 #include<string>
-
-std::wstring stringToWide(const std::string& text) {
-    std::wstring wide(text.length() + 1, 0);
-    MultiByteToWideChar(CP_UTF8, 0, text.c_str(), -1, &wide[0], wide.size());
-    return wide;
-}
+#include"shared.h"
 
 
-std::string GetLastErrorAsString()
-{
-    DWORD errorMessageID = ::GetLastError();
-    if (errorMessageID == 0) {
-        return std::string();
-    }
-    LPSTR messageBuffer = nullptr;
-    size_t size = FormatMessageA(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-        NULL, errorMessageID, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPSTR)&messageBuffer, 0, NULL);
-    std::string message(messageBuffer, size);
-    LocalFree(messageBuffer);
-    return message;
-}
 
 LPCWSTR app_path = L"NieR Replicant ver.1.22474487139.exe";
 LPCWSTR dll_path = L"NieR_Replicant_Hardcore.dll";
@@ -50,7 +32,7 @@ BOOL WINAPI main(int argc, char* argv[])
         );
    
     std::string error;
-
+   
     if (!ret) {
         error = GetLastErrorAsString();
         MessageBoxW(0, (std::wstring(L"Error when launching process. Error message:") + stringToWide(error)).c_str(), L"launcher error", 0);
@@ -58,6 +40,12 @@ BOOL WINAPI main(int argc, char* argv[])
     }
 
 
+
+    /*
+    Can't directly use the handle returned from CreateProcess becuase that process isn't the game, its
+    a short lived process that at some point creates the game process. Therefore we wait for the actual
+    game window to load then hook to that
+    */
     HWND window_handle = NULL;
     const int maxAttempts = 40;
     const int interval = 500; 
@@ -66,6 +54,8 @@ BOOL WINAPI main(int argc, char* argv[])
         if (window_handle) break;
         Sleep(interval);
     }
+
+
     if (!window_handle) {
         MessageBoxW(0, L"Error when opening window handle. Error message: Handle is null.", L"launcher error", 0);
         return FALSE;
