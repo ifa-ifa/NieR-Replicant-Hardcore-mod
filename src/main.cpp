@@ -11,7 +11,6 @@ LPCWSTR ProcessName = L"NieR Replicant ver.1.22474487139.exe";
 uintptr_t processBaseAddress = (uintptr_t)GetModuleHandleW(ProcessName);
 
 
-
 /*!
  * ----------------------------------------------------------------------
  * canUseItem
@@ -31,6 +30,9 @@ canUseItem canUseItem_hooked = canUseItem(processBaseAddress + 0x3b6fb0);
 canUseItem canUseItem_original;
 uint64_t __fastcall canUseItem_detoured(void* param_1, int32_t item_id, int64_t item_inventory_index, uint64_t param_4)
 {
+
+    // prevent this mod from triggering for things like fishing
+    if (item_id > 34) return canUseItem_original(param_1, item_id, item_inventory_index, param_4); 
 
     float* current_mp = (float*)(processBaseAddress + 0x4374A78);
     float* max_mp = (float*)(processBaseAddress + 0x122D2DC);
@@ -177,7 +179,11 @@ void __fastcall onEnemyMeleeHit_detoured(void* hitEvent) {
 }
 
 
-
+/*!
+ * ----------------------------------------------------------------------
+ * ----------------------------- Mod Setup ------------------------------
+ * ----------------------------------------------------------------------
+ */
 
 
 
