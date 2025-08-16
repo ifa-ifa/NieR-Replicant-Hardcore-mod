@@ -107,26 +107,26 @@ public:
         registerSetting("debug", true, &Settings::debug, "Opens a debug console window. Set to true for troubleshooting.");
 #endif
 
-        registerSetting("mp_multiplier_required_for_item", 1.0f, &Settings::mp_multiplier_required_for_item, "Using an item fails if current MP is below this fraction of max MP. (e.g., 0.5 = 50%)");
-        registerSetting("mp_multiplier_on_item_use", 0.0f, &Settings::mp_multiplier_on_item_use, "On item use, current MP is multiplied by this value. (e.g., 0.0 = lose all MP)");
-        registerSetting("mp_reduction_on_item_use", 0.0f, &Settings::mp_reduction_on_item_use, "On item use, this flat amount of MP is subtracted after the multiplier.");
+        registerSetting("mp_multiplier_required_for_item", 1.0f, &Settings::mp_multiplier_required_for_item, "Using an item fails if current MP is below this fraction of max MP");
+        registerSetting("mp_multiplier_on_item_use", 0.0f, &Settings::mp_multiplier_on_item_use, "On item use, current MP is multiplied by this value");
+        registerSetting("mp_reduction_on_item_use", 0.0f, &Settings::mp_reduction_on_item_use, "On item use, this flat amount of MP is subtracted after the multiplier");
 
-        registerSetting("use_fixed_max_mp", true, &Settings::use_fixed_max_mp, "If true, max MP is set to a fixed value. If false, it's based on a multiplier.");
-        registerSetting("fixed_max_mp", 100.0f, &Settings::fixed_max_mp, "The fixed value for max MP if use_fixed_max_mp is true.");
-        registerSetting("max_mp_multiplier", 1.0f, &Settings::max_mp_multiplier, "Multiplies max MP if use_fixed_max_mp is false.");
+        registerSetting("use_fixed_max_mp", true, &Settings::use_fixed_max_mp, "If true, max MP is set to a fixed value. If false, it's based on a multiplier");
+        registerSetting("fixed_max_mp", 100.0f, &Settings::fixed_max_mp, "The fixed value for max MP if use_fixed_max_mp is true");
+        registerSetting("max_mp_multiplier", 1.0f, &Settings::max_mp_multiplier, "Multiplies max MP by this if use_fixed_max_mp is false");
 
-        registerSetting("use_fixed_max_hp", false, &Settings::use_fixed_max_hp, "If true, max HP is set to a fixed value. If false, it's based on a multiplier.");
-        registerSetting("fixed_max_hp", 250, &Settings::fixed_max_hp, "The fixed value for max HP if use_fixed_max_hp is true.");
-        registerSetting("max_hp_multiplier", 0.75f, &Settings::max_hp_multiplier, "Multiplies max HP if use_fixed_max_hp is false.");
+        registerSetting("use_fixed_max_hp", false, &Settings::use_fixed_max_hp, "If true, max HP is set to a fixed value. If false, it's based on a multiplier");
+        registerSetting("fixed_max_hp", 250, &Settings::fixed_max_hp, "The fixed value for max HP if use_fixed_max_hp is true");
+        registerSetting("max_hp_multiplier", 0.75f, &Settings::max_hp_multiplier, "Multiplies max HP by this if use_fixed_max_hp is false");
 
-        registerSetting("passive_mp_recovery_multiplier", 0.25f, &Settings::passive_mp_recovery_multiplier, "Multiplier for the passive MP regeneration rate.");
+        registerSetting("passive_mp_recovery_multiplier", 0.35f, &Settings::passive_mp_recovery_multiplier, "Multiplier for the passive MP regeneration rate");
 
-        registerSetting("enable_mp_recovery_on_hit", true, &Settings::enable_mp_recovery_on_hit, "If true, you will gain MP when hitting an enemy.");
-        registerSetting("fixed_mp_recovery_on_hit", 0.0f, &Settings::fixed_mp_recovery_on_hit, "A flat amount of MP gained on each hit.");
-        registerSetting("multiplier_mp_recovery_on_hit", 0.05f, &Settings::multiplier_mp_recovery_on_hit, "A fraction of max MP gained on each hit. (e.g., 0.1 = 10% of max MP).");
+        registerSetting("enable_mp_recovery_on_hit", true, &Settings::enable_mp_recovery_on_hit, "If true, you will gain MP when hitting an enemy");
+        registerSetting("fixed_mp_recovery_on_hit", 0.0f, &Settings::fixed_mp_recovery_on_hit, "A flat amount of MP gained on each hit");
+        registerSetting("multiplier_mp_recovery_on_hit", 0.05f, &Settings::multiplier_mp_recovery_on_hit, "A fraction of max MP gained on each hit");
 
-        registerSetting("attack_stat_multiplier", 2.0f, &Settings::attack_stat_multiplier, "Attack multiplier");
-        registerSetting("magic_attack_stat_multiplier", 1.2f, &Settings::magic_attack_stat_multiplier, "Magic attack multiplier");
+        registerSetting("attack_stat_multiplier", 2.5f, &Settings::attack_stat_multiplier, "Attack multiplier");
+        registerSetting("magic_attack_stat_multiplier", 1.3f, &Settings::magic_attack_stat_multiplier, "Magic attack multiplier");
         registerSetting("defense_stat_multiplier", 1.0f, &Settings::defense_stat_multiplier, "Defense multiplier");
         registerSetting("magic_defense_stat_multiplier", 1.0f, &Settings::magic_defense_stat_multiplier, "Magic Defense multiplier");
 
@@ -153,10 +153,10 @@ public:
         INIReader reader(path);
         if (reader.ParseError() != 0) {
             MessageBoxW(0,
-                L"The INI file is corrupt or contains an error.\n\n"
+                L"The NieR_Replicant_Hardcore.ini file is corrupt or contains an error.\n\n"
                 L"Default settings will be used for this session.\n\n"
-                L"To fix this, you can either correct the error or delete the INI file.\n"
-                L"A new, clean INI will be generated on the next game launch.",
+                L"To fix this, you can either correct the error or delete the INI file, and "
+                L"a new, clean INI will be generated on the next game launch.",
                 L"INI Parse Error", 0);
 
             // Load the default values 
